@@ -1,5 +1,5 @@
 import java.awt.Graphics;
-import java.awt.*;
+import java.awt.Point;
 
 public class Stage {
     Grid grid;

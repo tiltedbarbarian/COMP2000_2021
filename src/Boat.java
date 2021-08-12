@@ -1,4 +1,4 @@
-import java.awt.*;
+import java.awt.Color;
 
 public class Boat extends Actor {
     public Boat(Cell inLoc) {

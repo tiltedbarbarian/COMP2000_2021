@@ -1,5 +1,8 @@
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 class Main extends JFrame {
     
     class App extends JPanel {

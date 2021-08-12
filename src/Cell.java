@@ -1,14 +1,15 @@
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Point;
+import java.awt.Rectangle;
+
 class Cell extends Rectangle {
-    // fields
     static int size = 35;
 
-    //constructors
     public Cell(int x, int y){
         super(x, y, size, size);
     }
 
-    //methods
     void paint(Graphics g, Point mousePos){
         if(contains(mousePos)){
             g.setColor(Color.GRAY);
