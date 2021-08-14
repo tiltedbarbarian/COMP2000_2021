@@ -8,6 +8,7 @@ Your major creative work is worth 60% of your unit total and is made up of four 
   * Viva Exam: 30%
 
 ## Milestone 1
+### Note: new due date is Friday 27th of August 2021, at 5:00pm.
 
 For the first stage in your major project you must improve the graphics of your basic grid. You should start from the repository branch tagged as "milestone1" (this will include the solution to task 6 though 9). If you wish to start early you can use the main branch from week 3 instead but you will need to solve the week 3 tasks first.
 
