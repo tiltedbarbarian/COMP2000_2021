@@ -7,10 +7,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 class StageReader {
-    public static Stage readStage(String path) throws IOException {
+    public static Stage readStage(String path) {
         Stage stage = new Stage();
         Properties props = (new Properties());
-        props.load(new FileInputStream(path));
+        try {
+            props.load(new FileInputStream(path));
+        }
+        catch ( IOException e) {
+            e.getStackTrace();
+        }
         for (String key : props.stringPropertyNames()) {
             System.out.println(key);
             String value = props.getProperty(key);

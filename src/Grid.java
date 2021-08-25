@@ -50,4 +50,11 @@ class Grid {
         }
         return Optional.empty();
     }
+    
+
+    //public void doToEachCell(Consumer<Cell> func) {
+        
+
+        
+    //}
 }
