@@ -12,7 +12,7 @@ class Main extends JFrame {
         Stage stage;
 
         public App() {
-            setPreferredSize(new Dimension(1024, 720));
+            setPreferredSize(new Dimension(1224, 720));
             stage = new Stage();
             try {
                 stage = StageReader.readStage("data/stage1.rvb");

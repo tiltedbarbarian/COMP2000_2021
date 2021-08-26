@@ -7,44 +7,31 @@ import java.awt.Rectangle;
 
 
 
+
 class Cell extends Rectangle {
     static int size = 35;
     char col;
     int row;
     float colorFloat;
-    float elevationFloat;
     Color color;
-    int elevation;
+
+   
+    
 
     public Cell(char inCol, int inRow, int inX, int inY) {
         
         super(inX, inY, size, size);
         col = inCol;
         row = inRow;
-        colorFloat = (float) Math.random();
-        if (colorFloat < 0.8) {
-            elevationFloat = (float) Math.random();
-        } else {
-            elevationFloat = -1;
-        }
-        if (colorFloat < 0.1) {
-            color = Color.GRAY;
-        } else if (colorFloat < 0.3 && colorFloat >= 0.1) {
-            color = Color.BLUE;
-        } else if (colorFloat < 0.7 && colorFloat >= 0.3 ) {
-            color = Color.GREEN;
-        } else if (colorFloat < 0.95 && colorFloat >= 0.7 ) {
-            color = Color.YELLOW;
-        } else if (colorFloat >= 0.95 ) {
-            color = new Color(150,102,0);
-        }
-        elevation = (int) ((float) 500 + (5500*elevationFloat));
-        
         
         
     }
 
+
+
+
     void paint(Graphics g, Point mousePos) {
+
         if(contains(mousePos)) {
             g.setColor(Color.GRAY);
         } else {
@@ -53,6 +40,20 @@ class Cell extends Rectangle {
         g.fillRect(x,y,size,size);
         g.setColor(Color.BLACK);
         g.drawRect(x,y,size,size);
+    }
+
+    Color shade(Color e, float scaling) {
+        if (scaling > 0.8) {
+            e = e.brighter().brighter();
+        } else if (scaling <= 0.2) {
+            e = e.darker().darker();
+        } else if (scaling > 0.2 && scaling <= 0.4) {
+            e = e.darker();
+        } else if (scaling > 0.6 && scaling <= 0.8) {
+            e = e.brighter();
+        }
+        
+        return e;
     }
 
          
@@ -64,5 +65,22 @@ class Cell extends Rectangle {
         } else {
             return false;
         }
+    }
+}
+
+
+
+
+
+
+class Building extends Cell {
+
+    public Building(char inCol, int inRow, int inX, int inY, float weight) {
+        super(inCol, inRow, inX, inY);
+        color = new Color(165,100,42);
+        
+
+        
+        
     }
 }
